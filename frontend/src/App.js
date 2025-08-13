@@ -14,7 +14,7 @@ export function App() {
   // Empty dependency array [] means this runs once after the first render.
   // axios.get fetches all todos; then we store them in state via setTodos.
   useEffect(() => {
-    axios.get("http://localhost:5000/todos").then(res => setTodos(res.data));
+    axios.get("https://todoapp-7ipp.onrender.com").then(res => setTodos(res.data));
   }, []);
 
   // Sends { text } to the backend.
@@ -22,7 +22,7 @@ export function App() {
   // Clears the input field.
   const addTodo = () => {
     if (!text.trim()) return; // ignore empty
-    axios.post("http://localhost:5000/todos", { text }).then(res => {
+    axios.post("https://todoapp-7ipp.onrender.com", { text }).then(res => {
       setTodos([...todos, res.data]);// append new todo from server
       setText("");// clear input
     });
@@ -31,14 +31,14 @@ export function App() {
   // Calls PUT to toggle on the server.
   // Optimistically mirrors that change in local state by flipping done.
   const toggleTodo = (id) => {
-    axios.put(`http://localhost:5000/todos/${id}`).then(() => {
+    axios.put(`https://todoapp-7ipp.onrender.com/${id}`).then(() => {
       setTodos(todos.map(todo => todo.id === id ? { ...todo, done: !todo.done } : todo));
     });
   };
 
   // Calls DELETE then removes that todo from state.
   const deleteTodo = (id) => {
-    axios.delete(`http://localhost:5000/todos/${id}`).then(() => {
+    axios.delete(`https://todoapp-7ipp.onrender.com/${id}`).then(() => {
       setTodos(todos.filter(todo => todo.id !== id));
     });
   };
