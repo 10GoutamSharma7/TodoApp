@@ -29,6 +29,8 @@ You can **add**, **toggle completion**, and **delete** tasks — all with a clea
 - In-memory data store (can be upgraded to database)
 
 ---
+<img width="1496" height="869" alt="Screenshot 2025-09-14 174032" src="https://github.com/user-attachments/assets/f5503e48-e079-42a4-8fa8-f881ed094cca" />
+---
 
 ## 📂 Project Structure
 todo-app/
